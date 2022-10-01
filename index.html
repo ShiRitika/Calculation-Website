@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- code for basic Operation -->
+    <div class="basic">
+      <h1 style="text-align: center">Basic Operation</h1>
+    </div>
+    <hr />
+
+    <div class="container1">
+      <!-- code for Swap -->
+      <div id="swap">
+        <h2>Swap the values</h2>
+        <form action="">
+          <label for="fval"><strong>First Value:</strong> </label><br />
+          <input type="text" id="fval" name="fval" class="input" value="" /><br />
+          <label for="sval"><strong>Second Value:</strong></label><br />
+          <input type="text" id="sval" name="sval" class="input" value="" /><br /><br />
+          <button id="btn1" class="button">Swap</button>&nbsp;<span id="invalid"></span>
+        </form>
+      </div>
+
+      <!-- code for frequency -->
+      <div id="frequency">
+        <h2>Frequency Count</h2>
+        <form action="">
+          <label for="input"><strong>Input:</strong></label><br />
+          <input type="text" placeholder="string" id="input" class="input" name="input" value=""/><br /><br />
+          <button id="btn2" class="button">Count</button>
+          <p id="invalid2"></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="container1">
+      <!-- code for Anagram -->
+      <div id="anagram">
+        <h2>Check for Anagram</h2>
+        <form action="">
+          <label for="firstInput"><strong>First Input:</strong></label><br />
+          <input type="text" placeholder="string" id="firstInput" class="input" name="firstInput" value="" /><br />
+          <label for="secondInput"><strong>Second Input:</strong></label><br />
+          <input type="text" placeholder="string" id="secondInput"class="input" name="secondInput" value="" /><br /><br />
+          <button id="btn3" class="button" >Check Anagram</button> &nbsp;<span id="output"></span>
+        </form>
+      </div>
+
+      <!-- code for even,odd,prime -->
+      <div id="EOP">
+        <h2>Find Even, Odd & Prime</h2>
+        <form action="">
+          <label for="inputNumber"><strong>Numbers:</strong></label><br />
+          <input type="text" placeholder="integer" id="inputNumber" class="input" name="inputNumber" value=""/><br /><br />
+          <button id="btn4" class="button">Check Numbers</button><br>
+          <span id="even"></span><br>
+          <span id="odd"></span><br>
+          <span id="prime"></span>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
