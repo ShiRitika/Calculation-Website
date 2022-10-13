@@ -1,6 +1,6 @@
 "use strict";
 
-//Program to disable or enable a button using javascript
+// Program to disable or enable a button using javascript
 let input = document.querySelectorAll(".input"); //selecting all input fields
 let button = document.querySelectorAll(".button"); //selecting all buttons
 
@@ -8,13 +8,19 @@ for(var i = 0 ; i < button.length ; i++){ //for each button it must be disabled
   button[i].disabled = true; //setting button state to disabled
 }
 
+
 input[0].addEventListener("change", swapHandle);//for input field value
-input[2].addEventListener("change",frequencyHandle);
-input[3].addEventListener("change",anagramHandle);
-input[5].addEventListener("change",eopHandle);
+input[1].addEventListener("change", swapHandle);
+input[2].addEventListener("change", frequencyHandle);
+input[3].addEventListener("change", anagramHandle);
+input[4].addEventListener("change", anagramHandle);
+input[5].addEventListener("change", eopHandle);
+input[6].addEventListener("change", sortingHandle);
+input[7].addEventListener("change", searchingHandle);
+input[8].addEventListener("change", searchHandle);
 
 function swapHandle() {
-    if (document.querySelector(".input").value === "") {
+    if (document.getElementById("fval").value === "") {
         button[0].disabled = true; //button remains disabled
     } else {
         button[0].disabled = false; //button is enabled
@@ -22,7 +28,7 @@ function swapHandle() {
 }
 
 function frequencyHandle() {
-  if (document.querySelector(".input").value === "") {
+  if (document.getElementById("input_frequency").value === "") {
       button[1].disabled = true; //button remains disabled
   } else {
       button[1].disabled = false; //button is enabled
@@ -30,7 +36,7 @@ function frequencyHandle() {
 }
 
 function anagramHandle() {
-  if (document.querySelector(".input").value === "") {
+  if (document.getElementById("firstInput").value === "") {
       button[2].disabled = true; //button remains disabled
   } else {
       button[2].disabled = false; //button is enabled
@@ -38,13 +44,36 @@ function anagramHandle() {
 }
 
 function eopHandle() {
-  if (document.querySelector(".input").value === "") {
+  if (document.getElementById("inputNumber").value === "") {
       button[3].disabled = true; //button remains disabled
   } else {
       button[3].disabled = false; //button is enabled
   }
 }
 
+function sortingHandle() {
+  if (document.getElementById("sort_input").value === "") {
+      button[4].disabled = true; //button remains disabled
+  } else {
+      button[4].disabled = false; //button is enabled
+  }
+}
+
+function searchingHandle() {
+  if (document.getElementById("search_input").value === "") {
+      button[5].disabled = true; //button remains disabled
+  } else {
+      button[5].disabled = false; //button is enabled
+  }
+}
+
+function searchHandle() {
+  if (document.getElementById("value_input").value === "") {
+      button[6].disabled = true; //button remains disabled
+  } else {
+      button[6].disabled = false; //button is enabled
+  }
+}
 
 
 //-----------------------code for swapping-----------------------------------
@@ -76,7 +105,7 @@ btnFrequency.addEventListener("click", freqencyCount); //adding event listener
 function freqencyCount(event) {
   event.preventDefault();
 
-  var string_value = document.getElementById("input").value;
+  var string_value = document.getElementById("input_frequency").value;
 
   const string_split = string_value.split(""); //converting string to array using split method
   console.log(string_split);
@@ -191,3 +220,118 @@ for (let i = 0; i < array.length ; i++) { // code for checking prime number
   document.getElementById('prime').innerHTML = arr3;
 }
 }
+
+//-----------------------code for Sorting starts-------------------------------------
+const btnSorting = document.getElementById("btn5"); //get button for anagram
+btnSorting.addEventListener("click", checkSorting);
+function checkSorting(event) {
+  event.preventDefault();
+
+  let sort_Input = document.getElementById("sort_input").value; //get value from input box in form if string
+  console.log(sort_Input);
+
+  //validation to check input value should be a number
+  if(isNaN(sort_Input)){
+    document.getElementById("invalid7").innerHTML ="Please inter only numbers!**"
+    var result = sort_Input.split(/[, ]+/);
+    console.log(result);
+    var sorted_array = result.sort();
+
+  } else{
+    var array = sort_Input.split(""); //convert string input in array
+    // var sorted_array = array.sort(function(a, b){return a - b});//sort() function sorts values as strings
+
+    //sort array with for loop
+    for (let i = 1 ; i < array.length; i++) // for next value
+    for (let j = 0; j < i; j++)             //for prev value
+        if (array[i] < array[j]) {          //comparison between next & prev value   
+          let x = array[i]; //concept to swap values
+          array[i] = array[j];
+          array[j] = x;
+        }
+        sorted_array = array;
+      }
+      document.getElementById("invalid7").innerHTML = `[ Sorted Array: ${sorted_array}]`;
+}
+
+//-----------------------code for sorting end here-------------------------------
+
+//-----------------------code for searching start-----------------------------
+const btnSearching = document.getElementById("btn6"); //get button for search value
+btnSearching.addEventListener("click", getValue);
+function getValue(event) {
+  event.preventDefault();
+
+  let search_Input = document.getElementById("search_input").value; //get value from input box in form if string
+  console.log(search_Input);
+
+  //validation to check input value should be a number
+  breakme :if(isNaN(search_Input)){
+    document.getElementById("eror").innerHTML ="Please enter only numbers!**"
+    break breakme;
+  } else {
+    var array = search_Input.split(""); //convert string input in array
+    iteration(array);
+  }
+  
+  // function iteration(array){
+  //   let search_Value = document.getElementById("value_input").value;
+  //   console.log(search_Value);
+  //   if(array.includes(search_Value)){
+  //     document.getElementById("output5").innerHTML = "Yes number is present!";
+  //     document.getElementById("output1").innerHTML = `Value: ${search_Value}`;
+  //   } else {
+  //     document.getElementById("output5").innerHTML = "NOT Present";
+  //   }
+  // }
+function iteration(array){
+  let search_Value = document.getElementById("value_input").value;
+  console.log(search_Value);
+    //iteration method to solve this problem
+    for(let i = 0 ; i < array.length ; i++){
+      if(array[i] === search_Value){
+        document.getElementById("output5").innerHTML = "Yes number is present!";
+        document.getElementById("output1").innerHTML = `Value: ${search_Value}`;
+        break;
+      } else if(array[i] !== search_Value) {
+        document.getElementById("output5").innerHTML = "NOT Present";
+      }
+    }
+  }
+}
+    
+  const btn_getposition = document.getElementById("btn7");
+  btn_getposition.addEventListener("click" ,getPosition);
+  function getPosition(event){
+    let search_Value = document.getElementById("value_input").value;
+    event.preventDefault();
+    let search_Input = document.getElementById("search_input").value; //get value from input box in form if string
+    let array = search_Input.split(""); //convert string input in array
+    const new_Array = array;
+    // let index = new_Array.indexOf(search_Value);
+    // // document.getElementById("output2").innerHTML = index;
+    // document.getElementById("output2").innerHTML = index + 1;
+
+  //   for(let i = 0 ; i < obj.length ; i++){
+  //     if(obj[i] === search_Value){
+  //       let index = new_Array.indexOf(search_Value);
+  //    document.getElementById("output2").innerHTML = index + 1;
+  //   }
+  // }
+  
+  //accessing object approach
+    var obj = {};
+    for (let i = 0; i < new_Array.length; ++i){ //for inserting array into object
+       obj[i] = new_Array[i];
+      }
+      let new_obj = obj;
+      
+      //loop for iterating object
+      for(const item in new_obj){ 
+        var key = Object.keys(new_obj)[item];
+        if(new_obj[key] === search_Value){
+          document.getElementById("output2").innerHTML = key;
+        }
+      }  
+    }
+  

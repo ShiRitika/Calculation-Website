@@ -55,6 +55,23 @@ h2{
     border: solid black; 
 }
 
+#sorting {
+  height: 225px;
+  width: 48%;
+  background-color: powderblue;
+  text-align: center;
+  float: left;
+  border: solid black;
+}
+
+#searching{
+  height: 225px;
+  width: 48%;
+  background-color: powderblue;
+  text-align: center;
+  float: right;
+  border: solid black; 
+}
 
 /* CSS  for button*/
 .button {

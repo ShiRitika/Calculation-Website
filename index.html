@@ -32,7 +32,7 @@
         <h2>Frequency Count</h2>
         <form action="">
           <label for="input"><strong>Input:</strong></label><br />
-          <input type="text" placeholder="string" id="input" class="input" name="input" value=""/><br /><br />
+          <input type="text" placeholder="string" id="input_frequency" class="input" name="input" value=""/><br /><br />
           <button id="btn2" class="button">Count</button>
           <p id="invalid2"></p>
         </form>
@@ -65,6 +65,35 @@
         </form>
       </div>
     </div>
+    
+    <div class="container1">
+      <!-- code for sorting -->
+      <div id="sorting">
+        <h2>Sort Your Array</h2>
+        <form action="">
+          <label for="sort_input"><strong>Enter the Values:</strong></label><br />
+          <input type="text" placeholder="numbers/strings" id="sort_input" class="input" name="input" value=""/><br /><br />
+          <button id="btn5" class="button">Sort</button>
+          <p id="invalid7"></p>
+        </form>
+      </div>
+
+      <!-- code for searching -->
+      <div id="searching">
+        <h2>Search my Number</h2>
+        <form action="">
+          <label for="search_input"><strong>Input the Array:</strong></label> 
+          <input type="text" placeholder="numbers" id="search_input" class="input" name="firstInput" value="" /><p id="eror"></p>
+          <label for="value_input"><strong>Input Number you want to Search:</strong></label>
+          <input type="text" placeholder="value" id="value_input"class="input" name="secondInput" value="" /> &nbsp;<span id="output5"></span><br /><br />
+          <button id="btn6" class="button" >Get Value</button> &nbsp;<span id="output1"></span>
+          <button id="btn7" class="button" >Get Position</button> &nbsp;<span id="output2"></span>
+        </form>
+      </div>
+
+
+    </div>
+
 
     <script src="script.js"></script>
   </body>
