@@ -1,22 +1,23 @@
 "use strict";
 
-// Program to disable or enable a button using javascript
-let input = document.querySelectorAll(".input"); //selecting all input fields
-let button = document.querySelectorAll(".button"); //selecting all buttons
+//-------------Program to disable or enable a button using javascript--------------------
+let input = document.querySelectorAll(".input");
+let button = document.querySelectorAll(".button");
 
-for (var i = 0; i < button.length; i++) { //for each button it must be disabled
-  button[i].disabled = true; //setting button state to disabled
+for (var i = 0; i < button.length; i++) {
+  //for each button it must be disabled
+  button[i].disabled = true;
 }
 
-input[0].addEventListener("change", swapHandle); //for input field value
-input[1].addEventListener("change", swapHandle);
-input[2].addEventListener("change", frequencyHandle);
-input[3].addEventListener("change", anagramHandle);
-input[4].addEventListener("change", anagramHandle);
-input[5].addEventListener("change", eopHandle);
-input[6].addEventListener("change", sortingHandle);
-input[7].addEventListener("change", searchingHandle);
-input[8].addEventListener("change", searchHandle);
+input[0].addEventListener("keyup", swapHandle);
+input[1].addEventListener("keyup", swapHandle);
+input[2].addEventListener("keyup", frequencyHandle);
+input[3].addEventListener("keyup", anagramHandle);
+input[4].addEventListener("keyup", anagramHandle);
+input[5].addEventListener("keyup", eopHandle);
+input[6].addEventListener("keyup", sortingHandle);
+input[7].addEventListener("keyup", searchingHandle);
+input[8].addEventListener("keyup", searchHandle);
 
 function swapHandle() {
   if (document.getElementById("fval").value === "") {
@@ -28,62 +29,62 @@ function swapHandle() {
 
 function frequencyHandle() {
   if (document.getElementById("input_frequency").value === "") {
-    button[1].disabled = true; //button remains disabled
+    button[1].disabled = true;
   } else {
-    button[1].disabled = false; //button is enabled
+    button[1].disabled = false;
   }
 }
 
 function anagramHandle() {
   if (document.getElementById("firstInput").value === "") {
-    button[2].disabled = true; //button remains disabled
+    button[2].disabled = true; 
   } else {
-    button[2].disabled = false; //button is enabled
+    button[2].disabled = false; 
   }
 }
 
 function eopHandle() {
   if (document.getElementById("inputNumber").value === "") {
-    button[3].disabled = true; //button remains disabled
+    button[3].disabled = true;
   } else {
-    button[3].disabled = false; //button is enabled
+    button[3].disabled = false; 
   }
 }
 
 function sortingHandle() {
   if (document.getElementById("sort_input").value === "") {
-    button[4].disabled = true; //button remains disabled
+    button[4].disabled = true; 
   } else {
-    button[4].disabled = false; //button is enabled
+    button[4].disabled = false; 
   }
 }
 
 function searchingHandle() {
   if (document.getElementById("search_input").value === "") {
-    button[5].disabled = true; //button remains disabled
+    button[5].disabled = true; 
   } else {
-    button[5].disabled = false; //button is enabled
+    button[5].disabled = false;
   }
 }
 
 function searchHandle() {
   if (document.getElementById("value_input").value === "") {
-    button[6].disabled = true; //button remains disabled
+    button[6].disabled = true; 
   } else {
-    button[6].disabled = false; //button is enabled
+    button[6].disabled = false; 
   }
 }
 
 //-----------------------code for swapping-----------------------------------
-const btnSwap = document.getElementById("btn1"); //get button swap
-btnSwap.addEventListener("click", swapText); //adding event listener
+const btnSwap = document.getElementById("btn1");
+btnSwap.addEventListener("click", swapText); 
 function swapText(event) {
-  event.preventDefault(); //prevent submiting form
+  event.preventDefault();
 
   var first_value = document.getElementById("fval").value;
   var second_value = document.getElementById("sval").value;
 
-  var temp; //temporary third variable
+  var temp; 
   temp = first_value;
   first_value = second_value;
   second_value = temp;
@@ -95,19 +96,19 @@ function swapText(event) {
 }
 
 //-------------------------code for Frequency--------------------------------------
-const btnFrequency = document.getElementById("btn2"); //get button for frequency
-btnFrequency.addEventListener("click", freqencyCount); //adding event listener
+const btnFrequency = document.getElementById("btn2");
+btnFrequency.addEventListener("click", freqencyCount);
 function freqencyCount(event) {
   event.preventDefault();
 
   var string_value = document.getElementById("input_frequency").value;
-
   const string_split = string_value.split(""); //converting string to array using split method
 
   //we use forEach method to access each element in array and count it
   let count = {}; //here we init count by setting it as empty obj it will tell count of each element
   string_split.forEach((val, index) => {
-    if (!count[val]) { //if element comes only first time
+    if (!count[val]) {
+      //if element comes only first time
       count[val] = 1;
     } else {
       count[val] = count[val] + 1; //if element come more that one time count get increased by 1
@@ -115,31 +116,32 @@ function freqencyCount(event) {
   });
 
   let str_count = JSON.stringify(count); //converting obj to string to get display
-  console.log(str_count);
-
-  document.getElementById("invalid2").innerHTML = str_count; //display obj on window
+  document.getElementById("invalid2").innerHTML = str_count;
 }
 
 // -----------------------code for Anagram----------------------------------
-const btnAnagram = document.getElementById("btn3"); //get button for anagram
+const btnAnagram = document.getElementById("btn3");
 btnAnagram.addEventListener("click", checkAnagram);
 function checkAnagram(event) {
   event.preventDefault();
 
-  var string1 = document.getElementById("firstInput").value; //get value from input box
-  var string2 = document.getElementById("secondInput").value; //get another string(sorted of first string)
+  var string1 = document.getElementById("firstInput").value; 
+  var string2 = document.getElementById("secondInput").value; 
   const check_Anagram = isAnagram(string1, string2);
 
   function isAnagram(string1, string2) {
-    if (string1.length !== string2.length) {  //check the lengtrh of both strings equal or not
+    if (string1.length !== string2.length) {
+      //check the lengtrh of both strings equal or not
       return false; //return false if length is not equal
     }
     var counter = {}; //empty obj for frequency count of string1
     for (let letter of string1) {
       counter[letter] = (counter[letter] || 0) + 1; //if not set 0 it will give undefine
     }
-    for (let items of string2) { //for each letter in string2
-      if (!counter[items]) { //if any letter is not in privious counter obj return false
+    for (let items of string2) {
+      //for each letter in string2
+      if (!counter[items]) {
+        //if any letter is not in privious counter obj return false
         return false;
       }
       counter[items] = counter[items] - 1; //otherwise conter item get minus to become undefined
@@ -147,31 +149,40 @@ function checkAnagram(event) {
     return true;
   }
   if (check_Anagram === false) {
-    document.getElementById("output").innerHTML =
-      "NO, it is not an Anagram! :("; //display obj on window // console.log("NO, it is not an Anagram");
+    document.getElementById("output").innerHTML = "NO, it is not an Anagram! :("; 
   } else {
     document.getElementById("output").innerHTML = "YES, it is an Anagram! :)";
   }
 }
 
 // -----------------------code for finding Even , Odd & Prime----------------------------
-const btnEOP = document.getElementById("btn4"); //get button for anagram
+const btnEOP = document.getElementById("btn4");
 btnEOP.addEventListener("click", checkEOP);
 function checkEOP(event) {
   event.preventDefault();
 
-  let stringInput = document.getElementById("inputNumber").value; //get value from input box in form if string
-  //validation to check input value should be a number
-  if (isNaN(stringInput)) {
-    document.getElementById("even").innerHTML = "Please inter only numbers!**";
-  } else {
-    let array = stringInput.split(""); //convert string input in array
+  var numbers = /^[0-9]+$/;
+  var comma = /[_,]/;
 
+  let stringInput = document.getElementById("inputNumber").value; 
+  //validation to check input value should be a number
+  if (stringInput.match(numbers)) {
+    
+    let array = stringInput.split(""); 
+    validate(array);
+  } else if (stringInput.match(comma)) {
+    var array = stringInput.split(/[, ]+/);
+    validate(array);
+  } else {
+    document.getElementById("even").innerHTML = "Please inter only numbers!**";
+  }
+  function validate(array) {
     var arr = ["Even:"];
     var arr2 = ["Odd:"];
     var arr3 = ["Prime:"];
 
-    for (let i = 0; i < array.length; i++) { // code for checking even odd
+    for (let i = 0; i < array.length; i++) {
+      // code for checking even odd
       if (array[i] % 2 == 0) {
         arr.push(array[i]);
       } else if (array[i] % 2 != 0) {
@@ -179,7 +190,8 @@ function checkEOP(event) {
       }
     }
 
-    for (let i = 0; i < array.length; i++) { // code for checking prime number
+    for (let i = 0; i < array.length; i++) {
+      // code for checking prime number
       let flag = 0;
       for (let j = 2; j < array[i]; j++) {
         if (array[i] % j == 0) {
@@ -203,32 +215,44 @@ const btnSorting = document.getElementById("btn5"); //get button for anagram
 btnSorting.addEventListener("click", checkSorting);
 function checkSorting(event) {
   event.preventDefault();
+  var comma = /[_,]/;
+  var numbers = /^[0-9]/;
+  var string = /^[A-Za-z]/;
 
   let sort_Input = document.getElementById("sort_input").value; //get value from input box in form if string
-  var array = sort_Input.split(""); //convert string input in array
-
-  var sortedArray = sortArray(array);
-
-  // validation to check input value should be a number
-  // var sorted_array;
-  // if(isNaN(sort_Input)) {
-  //   document.getElementById("invalid7").innerHTML ="Please inter only numbers!**"
-  //   var result = sort_Input.split(/[, ]+/);
-  //   console.log(result);
-  //   sorted_array = result.sort();
-  // } else {
-  //   var array = sort_Input.split(""); //convert string input in array
-  //   //sorted_array = array.sort(function(a, b){return a - b});//sort() function sorts values as strings
-  //   sortArray(array);
-  // }
+  if (sort_Input.match(comma) && sort_Input.match(numbers)) { 
+    var array = sort_Input.split(/[, ]+/);
+    sortArrayWithCommaNum(array);
+  
+  } else if(sort_Input.match(comma) && sort_Input.match(string)){
+    var array = sort_Input.split(/[, ]+/);
+    sortArrayWithCommaStr(array);
+  } else {
+    var array = sort_Input.split("");
+    sortArray(array); //convert string input in array
+  }
+    var sortedArray = array;
 
   document.getElementById("invalid7").innerHTML = `[ Sorted Array: ${sortedArray}]`;
 }
+
+function sortArrayWithCommaNum(array){
+  array.sort(function(a, b){return a - b});//sort()
+  return array;
+}
+
+function sortArrayWithCommaStr(array){
+  array.sort();
+  return array;
+}
 //sort array with for loop
 function sortArray(array) {
-  for (let i = 1; i < array.length; i++) { // for next value
-    for (let j = 0; j < i; j++) { //for prev value
-      if (array[i] < array[j]) { //comparison between next & prev value
+  for (let i = 1; i < array.length; i++) {
+    // for next value
+    for (let j = 0; j < i; j++) {
+      //for prev value
+      if (array[i] < array[j]) {
+        //comparison between next & prev value
         let x = array[i]; //concept to swap values
         array[i] = array[j];
         array[j] = x;
@@ -246,7 +270,6 @@ function getValue(event) {
   event.preventDefault();
 
   let search_Input = document.getElementById("search_input").value; //get value from input box in form if string
-  console.log(search_Input);
 
   //validation to check input value should be a number
   breakme: if (isNaN(search_Input)) {
@@ -256,7 +279,6 @@ function getValue(event) {
     var array = search_Input.split(""); //convert string input in array
     iteration(array);
   }
-
   // function iteration(array){
   //   let search_Value = document.getElementById("value_input").value;
   //   console.log(search_Value);
@@ -269,9 +291,8 @@ function getValue(event) {
   // }
   function iteration(array) {
     let search_Value = document.getElementById("value_input").value;
-    console.log(search_Value);
+
     let flag = 0;
-    //iteration method to solve this problem
     for (let i = 0; i < array.length; i++) {
       if (array[i] === search_Value) {
         flag = 1;
@@ -307,7 +328,8 @@ function getValue(event) {
 
     //accessing object approach
     var obj = {};
-    for (let i = 0; i < new_Array.length; ++i) { //for inserting array into object
+    for (let i = 0; i < new_Array.length; ++i) {
+      //for inserting array into object
       obj[i] = new_Array[i];
     }
     let new_obj = obj;
@@ -322,4 +344,3 @@ function getValue(event) {
     }
   }
 }
-
