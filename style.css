@@ -73,6 +73,15 @@ h2{
   border: solid black; 
 }
 
+#subString {
+  height: 225px;
+  width: 100%;
+  background-color: powderblue;
+  text-align: center;
+  float: left;
+  border: solid black;
+}
+
 /* CSS  for button*/
 .button {
   align-items: center;
@@ -108,4 +117,8 @@ h2{
   cursor: not-allowed;
   background: rgba(0, 0, 0, .08);
   color: rgba(0, 0, 0, .3);
+}
+
+.output{
+  color: #052248;
 }
