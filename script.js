@@ -85,6 +85,39 @@ function substringHandle() {
   }
 };
 
+document.getElementById("fval").onclick = function () {
+  document.getElementById("invalid").innerHTML = "";
+};
+document.getElementById("input_frequency").onclick = function () {
+  document.getElementById("invalid2").innerHTML = "";
+};
+document.getElementById("firstInput").onclick = function () {
+  document.getElementById("output").innerHTML = "";
+};
+document.getElementById("inputNumber").onclick = function () {
+  document.getElementById("even").innerHTML = "";
+  document.getElementById("odd").innerHTML = "";
+  document.getElementById("prime").innerHTML = "";
+};
+document.getElementById("sort_input").onclick = function () {
+  document.getElementById("invalid7").innerHTML = "";
+};
+document.getElementById("search_input").onclick = function () {
+  document.getElementById("eror").innerHTML = "";
+  document.getElementById("output5").innerHTML = "";
+  document.getElementById("output1").innerHTML = "";
+  document.getElementById("output2").innerHTML = "";
+};
+document.getElementById("value_input").onclick = function () {
+  document.getElementById("output5").innerHTML = "";
+  document.getElementById("output1").innerHTML = "";
+  document.getElementById("output2").innerHTML = "";
+};
+document.getElementById("input_string").onclick = function () {
+  document.getElementById("output3").innerHTML = "";
+  document.getElementById("output4").innerHTML = "";
+};
+
 //-----------------------code for swapping-----------------------------------
 const btnSwap = document.getElementById("btn1");
 btnSwap.addEventListener("click", swapText); 
@@ -184,7 +217,7 @@ function checkEOP(event) {
     let array = stringInput.split(/[, ]+/);
     validate(array);
   } else {
-    document.getElementById("even").innerHTML = "Please inter only numbers!**";
+    document.getElementById("even").innerHTML = "Please inter only numbers!";
   }
   function validate(array) {
     let arr = ["Even:"];
@@ -214,9 +247,9 @@ function checkEOP(event) {
         arr3.push(array[i]);
       }
     }
-    document.getElementById("even").innerHTML = arr;
-    document.getElementById("odd").innerHTML = arr2;
-    document.getElementById("prime").innerHTML = arr3;
+    document.getElementById("even").innerHTML = `${arr},`;
+    document.getElementById("odd").innerHTML = `${arr2},`;
+    document.getElementById("prime").innerHTML = `${arr3}`;
   }
 };
 
@@ -312,7 +345,7 @@ function getValue(event) {
     }
     if (flag == 1) {
       document.getElementById("output5").innerHTML = "Yes number is present!";
-      document.getElementById("output1").innerHTML = `Value: ${search_Value}`;
+      document.getElementById("output1").innerHTML = search_Value;
     } else {
       document.getElementById("output5").innerHTML = "NOT Present";
     }
@@ -369,10 +402,9 @@ function substringMatch(event) {
   let result;
   
   if(subString_input == "") {
-    document.getElementById("output4").innerHTML = "Please enter substring";
+    document.getElementById("output3").innerHTML = "Please enter substring";
   } else if(string_Input.match(numbers)) {
-    debugger;
-    document.getElementById("output4").innerHTML = "Please enter only String";
+    document.getElementById("output3").innerHTML = "Please enter only String";
   } else if(string_Input.match(comma)) {
     var array = string_Input.split(/[, ]+/);
     result = stringArrayMatching(array);
@@ -395,14 +427,12 @@ function substringMatch(event) {
 // }
 
 function stringMatching(string_Input) {
-  debugger;
   let subString_input = document.getElementById("input_substring").value;
   let result = string_Input.indexOf(subString_input) !== -1; // true
   return result;
 };
 
 function stringArrayMatching(array) {
-  debugger;
   let result;
   let subString_input = document.getElementById("input_substring").value;
   console.log(array);

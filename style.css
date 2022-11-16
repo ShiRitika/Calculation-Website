@@ -1,5 +1,10 @@
-body{
-    background-color: #263238;
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #263238;
 }
 
 .basic {
@@ -8,117 +13,99 @@ body{
 }
 
 .container1 {
-  height: 240px;
   background-color: #005980;
   padding-top: 20px;
   padding-left: 15px;
   padding-right: 15px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
 }
 
-h2{
+.operation-container {
+  width: 49%;
+  background-color: powderblue;
+  min-height: 240px;
+}
+
+.container1 .operation-container h2 {
+  text-align: center;
   color: #004d40;
 }
 
-#swap {
-  height: 225px;
-  width: 48%;
-  background-color: powderblue;
-  text-align: center;
-  float: left;
-  border: solid black;
+.form-container {
+  padding: 1px 40px 1px 40px;
 }
 
-#frequency {
-  height: 225px;
-  width: 48%;
-  background-color: powderblue;
-  text-align: center;
-  float: right;
-  border: solid black;
-}
-
-#anagram{
-    height: 225px;
-  width: 48%;
-  background-color: powderblue;
-  text-align: center;
-  float: left;
-  border: solid black;
-}
-
-#EOP{
-    height: 225px;
-    width: 48%;
-    background-color: powderblue;
-    text-align: center;
-    float: right;
-    border: solid black; 
-}
-
-#sorting {
-  height: 225px;
-  width: 48%;
-  background-color: powderblue;
-  text-align: center;
-  float: left;
-  border: solid black;
-}
-
-#searching{
-  height: 225px;
-  width: 48%;
-  background-color: powderblue;
-  text-align: center;
-  float: right;
-  border: solid black; 
-}
-
-#subString {
-  height: 225px;
+input[type="text"] { 
   width: 100%;
-  background-color: powderblue;
-  text-align: center;
-  float: left;
-  border: solid black;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+    font-size: 15px;
+    font-weight: bold;
 }
 
-/* CSS  for button*/
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
 .button {
-  align-items: center;
   background-color: #0d4276;
-  border: 0;
-  border-radius: 50px;
-  color: #ffffff;
-  display: inline-flex;
-  font-size: 14px;
+  border-radius: 2px;
+  font-size: 15px;
   justify-content: center;
-  line-height: 20px;
-  max-width: 480px;
+  line-height: 25px;
+  max-width: 600px;
   min-height: 25px;
   min-width: 0px;
-  overflow: hidden;
-  padding: 0px;
   padding-left: 20px;
   padding-right: 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .button:hover,
-.button:focus { 
-  background-color: #16437E;
+.button:focus {
+  background-color: #16437e;
   color: #ffffff;
 }
 
 .button:active {
   background: #09223b;
-  color: rgb(255, 255, 255, .7);
+  color: rgb(255, 255, 255, 0.7);
 }
 
-.button:disabled { 
+.button:disabled {
   cursor: not-allowed;
-  background: rgba(0, 0, 0, .08);
-  color: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.3);
 }
 
+.col-25 {
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  width: 75%;
+  margin-top: 6px;
+}
+.row {
+  display: flex;
+  margin: 10px;
+}
+
+.error {
+  font-size: 14px;
+  color: rgb(187, 10, 10);
+}
 .output{
-  color: #052248;
+  font-size: 18px;
+    font-weight: bold;
+    color: rgb(2, 2, 69);
 }

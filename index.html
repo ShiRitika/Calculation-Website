@@ -1,112 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculation</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
+</head>
+<body>
     <!-- code for basic Operation -->
     <div class="basic">
-      <h1 style="text-align: center">Basic Operation</h1>
+        <h1 style="text-align: center">Basic Operation</h1>
     </div>
     <hr />
-
-    <div class="container1">
-      <!-- code for Swap -->
-      <div id="swap">
-        <h2>Swap the values</h2>
-        <form action="">
-          <label for="fval"><strong>First Value:</strong> </label><br />
-          <input type="text" id="fval" name="fval" class="input" value="" /><br />
-          <label for="sval"><strong>Second Value:</strong></label><br />
-          <input type="text" id="sval" name="sval" class="input" value="" /><br /><br />
-          <button id="btn1" type="button" class="button">Swap</button>&nbsp;<span id="invalid" class="output"></span>
-        </form>
-      </div>
-
-      <!-- code for frequency -->
-      <div id="frequency">
-        <h2>Frequency Count</h2>
-        <form action="">
-          <label for="input"><strong>Input:</strong></label><br />
-          <input type="text" placeholder="string" id="input_frequency" class="input" name="input" value=""/><br /><br />
-          <button id="btn2" class="button">Count</button>
-          <p id="invalid2" class="output"></p>
-        </form>
-      </div>
-    </div>
-
-    <div class="container1">
-      <!-- code for Anagram -->
-      <div id="anagram">
-        <h2>Check for Anagram</h2>
-        <form action="">
-          <label for="firstInput"><strong>First Input:</strong></label><br />
-          <input type="text" placeholder="string" id="firstInput" class="input" name="firstInput" value="" /><br />
-          <label for="secondInput"><strong>Second Input:</strong></label><br />
-          <input type="text" placeholder="string" id="secondInput"class="input" name="secondInput" value="" /><br /><br />
-          <button id="btn3" class="button" >Check Anagram</button> &nbsp;<span id="output" class="output"></span>
-        </form>
-      </div>
-
-      <!-- code for even,odd,prime -->
-      <div id="EOP">
-        <h2>Find Even, Odd & Prime</h2>
-        <form action="">
-          <label for="inputNumber"><strong>Numbers:</strong></label><br />
-          <input type="text" placeholder="integer" id="inputNumber" class="input" name="inputNumber" value=""/><br /><br />
-          <button id="btn4" class="button">Check Numbers</button><br>
-          <span id="even" class="output"></span><br>
-          <span id="odd" class="output"></span><br>
-          <span id="prime" class="output"></span>
-        </form>
-      </div>
-    </div>
     
     <div class="container1">
-      <!-- code for sorting -->
-      <div id="sorting">
-        <h2>Sort Your Array</h2>
-        <form action="">
-          <label for="sort_input"><strong>Enter the Values:</strong></label><br />
-          <input type="text" placeholder="numbers/strings" id="sort_input" class="input" name="input" value=""/><br /><br />
-          <button id="btn5" class="button">Sort</button>
-          <p id="invalid7" class="output"></p>
-        </form>
-      </div>
-
-      <!-- code for searching -->
-      <div id="searching">
-        <h2>Search my Number</h2>
-        <form action="">
-          <label for="search_input"><strong>Input the Array:</strong></label> 
-          <input type="text" placeholder="numbers" id="search_input" class="input" name="firstInput" value="" /><p id="eror"></p>
-          <label for="value_input"><strong>Input Number you want to Search:</strong></label>
-          <input type="text" placeholder="value" id="value_input"class="input" name="secondInput" value="" /> &nbsp;<span id="output5" class="output"></span><br /><br />
-          <button id="btn6" class="button" >Get Value</button> &nbsp;<span id="output1" class="output"></span>
-          <button id="btn7" class="button" >Get Position</button> &nbsp;<span id="output2" class="output"></span>
-        </form>
-      </div>
+        <!-- code for Swap -->
+        <div class="operation-container" id="swap">
+            <h2>Swap the values</h2>
+            <form action="" class="form-container">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="fval"><strong>First Value:</strong></label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="fval" name="fval" class="input" value="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="sval"><strong>Second Value:</strong></label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="sval" name="sval" class="input" value="">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-25">
+                        <button id="btn1" type="button" class="button">Swap</button>
+                    </div>
+                    <div class="col-75">
+                        <span id="invalid" class="output"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <!-- code for frequency -->
+        <div class="operation-container" id="frequency">
+            <h2>Frequency Count</h2>
+            <form action="" class="form-container">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="input"><strong>Input Values:</strong></label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" placeholder="string" id="input_frequency" name="input" class="input" value="">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-25">
+                        <button id="btn2" class="button">Count</button>
+                    </div>
+                    <div class="col-75">
+                        <span id="invalid2" class="output"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    
+
     <div class="container1">
-    <!-- code for SubString -->
-    <div id="subString">
-      <h2>Check for SubString</h2>
-      <form action="">
-        <label for="input_string"><strong>String:</strong></label> 
-        <input type="text" placeholder="string" id="input_string" class="input" name="" value="" /><p id="output3"></p>
-        <label for="input_substring"><strong>Substring:</strong></label>
-        <input type="text" placeholder="Substring" id="input_substring" class="input" name="" value="" /> &nbsp;<span id="output5"></span><br /><br />
-        <button id="btn8" class="button" >Match</button> &nbsp;<p id="output4" class="output"></p>
-      </form>
-    </div>
+        <!-- code for Anagram -->
+        <div class="operation-container" id="anagram">
+            <h2>Check for Anagram</h2>
+            <form action="" class="form-container">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="firstInput"><strong>First Input:</strong></label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" placeholder="string" id="firstInput" name="firstInput" class="input" value="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="secondInput"><strong>Second Input:</strong></label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" placeholder="string" id="secondInput" name="secondInput" class="input" value="">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-25">
+                        <button id="btn3" type="button" class="button">Check</button>
+                    </div>
+                    <div class="col-75">
+                        <span id="output" class="output"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <!-- code for even, odd ,prime -->
+        <div class="operation-container" id="EOP">
+            <h2>Find Even, Odd & Prime</h2>
+            <form action="" class="form-container">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="inputNumber"><strong>Enter Numbers:</strong></label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" placeholder="integer" id="inputNumber" name="inputNumber" class="input" value="">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-25">
+                        <button id="btn4" class="button">Check</button>
+                    </div>
+                    <div class="col-75">
+                        <span id="even" class="output"></span>
+                        <span id="odd" class="output"></span>
+                        <span id="prime" class="output"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 
+    <div class="container1">
+        <!-- code for Sorting -->
+        <div class="operation-container" id="sorting">
+            <h2>Sort Your Array</h2>
+            <form action="" class="form-container">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="sort_input"><strong>Enter Values:</strong></label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" placeholder="numbers/strings" id="sort_input" name="input" class="input" value="">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-25">
+                        <button id="btn5"  class="button">Sort</button>
+                    </div>
+                    <div class="col-75">
+                        <span id="invalid7" class="output"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <!-- code for Searching -->
+        <div class="operation-container" id="searching">
+            <h2>Search my Number</h2>
+            <form action="" class="form-container">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="search_input"><strong>Input the Array:</strong></label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" placeholder="numbers" id="search_input" name="firstInput" class="input" value="">
+                        <span id="eror" class="error"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="value_input"><strong>Search value:</strong></label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" placeholder="values" id="value_input" name="secondInput" class="input" value="">
+                        <span id="output5" class="output"></span>
+                    </div>
+                </div>
 
+                <br>
+                <div class="row">
+                    <div class="col-25">
+                        <button id="btn6" class="button">Get Value</button>
+                        <span id="output1" class="output"></span>
+                    </div>
+                    <div class="col-75">
+                        <button id="btn7" class="button">Get Position</button>
+                        <span id="output2" class="output"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container1">
+        <!-- code for Substring -->
+        <div class="operation-container" id="subString">
+            <h2>Check for SubString</h2>
+            <form action="" class="form-container">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="input_string"><strong>String:</strong></label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" placeholder="string" id="input_string" name="" class="input" value="">
+                        <span id="output3" class="error"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="input_substring"><strong>Substring:</strong></label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" placeholder="Substring" id="input_substring" name="" class="input" value="">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-25">
+                        <button id="btn8"  class="button">Match</button>
+                    </div>
+                    <div class="col-75">
+                        <span id="output4" class="output"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+      
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
