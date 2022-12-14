@@ -109,3 +109,67 @@ label {
     font-weight: bold;
     color: rgb(2, 2, 69);
 }
+
+/* responsive on i-phones */
+@media only screen and (max-width: 500px) {
+  .container1 {
+    width: 100%;
+    display: block;
+}
+.operation-container {
+  width: 100%;
+}
+.form-container {
+    padding: 1px 5px 1px 5px;
+}
+.button {
+   font-size: 12px;
+   padding-left: 5px;
+   padding-right: 5px;
+}
+.output {
+   font-size: 12px;
+}
+}
+
+/* responsive on GAlexy */
+@media only screen and (max-width: 300px) {
+  .form-container {
+    padding: 1px 2px 1px 2px;
+}
+.row {
+  display: block;
+  margin: 1px 5px 1px 5px;
+}
+.col-25 {
+  width: 100%;
+  margin-top: 0px;
+}
+label {
+  padding: 0 0 0 0;
+}
+.col-75 {
+  width: 100%;
+}
+.button {
+  font-size: 15px;
+}
+.output {
+  font-size: 15px;
+}
+}
+
+/* responsive on i-pads*/
+@media only screen and (max-width: 1000px) {
+  .container1 {
+     padding-bottom: 0px;
+  }
+  .form-container {
+    padding: 1px 2px 1px 2px;
+}
+.col-25 {
+  margin-top: 0px;
+    width: 40%;
+    margin-top: 6px;
+}
+}
