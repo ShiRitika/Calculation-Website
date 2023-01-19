@@ -2,7 +2,7 @@
 
 ## Poject Desrciption:
 
-Basic Operation Calculation Website is a web Application  made of using pure Javascript's with HTML & CSS. In this application we can perform some basic calculations like:- Swapping Two Values, Frequency Count, Check for Anagram, Find Even,Odd, Prime, Sorting Array, Seacrh the Number, & Check for Substring. Having Seven Sections for it contains forms to get ouput with proper validation. This Website is fully responsive.
+Basic Operation Calculation Website is a web Application  made of using pure Javascript's with HTML & CSS. In this application we can perform some basic calculations like:- Swapping Two Values, Frequency Count, Check for Anagram, Find Even,Odd, Prime, Sorting Array, Search the Number, & Check for Substring. Having Seven Sections for it contains forms to get output with proper validation. This Website is fully responsive.
 
 ## Technology Used:
 
